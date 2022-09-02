@@ -8,14 +8,15 @@ def game():
         print("even")
     elif is_win(gamer, computer):
         #call function
-        print("you win!")
+        print("you won!")
     else:
-        print("you loose...")
+        print("you lost...")
 
 def is_win(gamer, computer):
     #s>p,r>s,p>r
     if (gamer == "s" and computer == "p") or (gamer == "r" and computer == "s")\
          or (gamer == "p" and computer == "r"):
          return True
+         #function always end with return, use return to break
 
 game()
