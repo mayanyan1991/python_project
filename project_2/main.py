@@ -1,3 +1,4 @@
+# while loop, if statement
 import random
 def guess(x):
     a = random.randint(1,x)
@@ -5,10 +6,12 @@ def guess(x):
     min_limi = 1
     max_limi = x
     while a > 1:
-        if b > a:
-            b = int(input("guess a new number between 1 and and " + str(b) +": "))
-        elif b < a and b > 1:
-            b = int(input("guess a new number between "+ str(b) + " and " + str(x) + ": "))
+        if b > a and b <= max_limi:
+            max_limi = b
+            b = int(input("guess a new number between " + str(min_limi) + "  and " + str(max_limi) +": "))    
+        elif b < a and b >= min_limi:
+            min_limi = b
+            b = int(input("guess a new number between "+ str(min_limi) + " and " + str(max_limi) + ": "))
         elif b == a:
             print("correct")
             break
